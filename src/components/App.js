@@ -85,11 +85,12 @@ const App = () => {
         {/* Add & Submit with no space from above */}
         <div style={{ display: 'flex', marginTop: '0px' }}>
           <button type="button" onClick={handleAdd} style={{ borderRadius: 0 }}>
-            Addmore
+            Add More...
           </button>
           <button type="submit" style={{ borderRadius: 0 }}>
             Submit
           </button>
+          <h2>After clicking submit check  console for data</h2>
         </div>
       </form>
     </div>
