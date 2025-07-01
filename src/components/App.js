@@ -90,8 +90,8 @@ const App = () => {
           <button type="submit" style={{ borderRadius: 0 }}>
             Submit
           </button>
-          <h2>After clicking submit check  console for data</h2>
         </div>
+        <h2>After clicking submit check  console for data</h2>
       </form>
     </div>
   );
