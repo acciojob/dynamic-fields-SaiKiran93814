@@ -24,11 +24,25 @@ const App = () => {
   };
 
   return (
-    <div style={{ padding: '2rem', fontFamily: 'Arial' }}>
-      <h2>Dynamic Form</h2>
-      <form onSubmit={handleSubmit}>
+    <div style={{ paddingTop: '40px', fontFamily: 'Arial' }}>
+      <form
+        onSubmit={handleSubmit}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: 0, // no vertical gap
+        }}
+      >
         {fields.map((field, index) => (
-          <div key={index} style={{ marginBottom: '1rem' }}>
+          <div
+            key={index}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              marginBottom: '0px', // remove gap
+            }}
+          >
             <input
               type="text"
               name="name"
@@ -36,7 +50,11 @@ const App = () => {
               value={field.name}
               onChange={(e) => handleChange(index, e)}
               required
-              style={{ marginRight: '10px' }}
+              style={{
+                border: '1px solid #ccc',
+                height: '30px',
+                marginRight: '0px',
+              }}
             />
             <input
               type="number"
@@ -45,19 +63,34 @@ const App = () => {
               value={field.age}
               onChange={(e) => handleChange(index, e)}
               required
-              style={{ marginRight: '10px' }}
+              style={{
+                border: '1px solid #ccc',
+                height: '30px',
+                marginRight: '0px',
+              }}
             />
-            {index > 0 && (
-              <button type="button" onClick={() => handleRemove(index)}>
-                Remove
-              </button>
-            )}
+            <button
+              type="button"
+              onClick={() => handleRemove(index)}
+              style={{
+                height: '34px',
+                marginRight: '0px',
+              }}
+            >
+              Remove
+            </button>
           </div>
         ))}
-        <button type="button" onClick={handleAdd} style={{ marginRight: '10px' }}>
-          Add
-        </button>
-        <button type="submit">Submit</button>
+
+        {/* Add & Submit with no space from above */}
+        <div style={{ display: 'flex', marginTop: '0px' }}>
+          <button type="button" onClick={handleAdd} style={{ borderRadius: 0 }}>
+            Addmore
+          </button>
+          <button type="submit" style={{ borderRadius: 0 }}>
+            Submit
+          </button>
+        </div>
       </form>
     </div>
   );
