@@ -20,7 +20,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Submitted:', fields);
+    console.log(fields);  // Log array directly to match Cypress expectation
   };
 
   return (
@@ -31,7 +31,7 @@ const App = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
-          gap: 0, // no vertical gap
+          gap: 0,
         }}
       >
         {fields.map((field, index) => (
@@ -40,7 +40,7 @@ const App = () => {
             style={{
               display: 'flex',
               alignItems: 'center',
-              marginBottom: '0px', // remove gap
+              marginBottom: '0px',
             }}
           >
             <input
@@ -82,7 +82,6 @@ const App = () => {
           </div>
         ))}
 
-        {/* Add & Submit with no space from above */}
         <div style={{ display: 'flex', marginTop: '0px' }}>
           <button type="button" onClick={handleAdd} style={{ borderRadius: 0 }}>
             Add More...
@@ -91,7 +90,7 @@ const App = () => {
             Submit
           </button>
         </div>
-        <h2>After clicking submit check  console for data</h2>
+        <h2>After clicking submit check console for data</h2>
       </form>
     </div>
   );
